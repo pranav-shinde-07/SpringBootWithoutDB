@@ -45,5 +45,18 @@ public class StudentService {
 		}
 		return student;
 	}
+	
+	public Student getStudentWithMinCourseFees() {
+		List<Student> list = dao.getAllStudents();
+		Student student = null;
+		double minCourseFees = 100000d;
+		for(Student s:list) {
+			if(minCourseFees > s.getStudentCourseFees()) {
+				minCourseFees = s.getStudentCourseFees();
+				student = s;
+			}
+		}
+		return student;
+	}
 
 }
