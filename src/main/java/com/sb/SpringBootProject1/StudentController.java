@@ -50,5 +50,10 @@ public class StudentController {
 	public Student getStudentsWithMaxCourseFees() {
 		return service.getStudentWithMaxCourseFees();
 	}
+	
+	@GetMapping("/get-student-with-min-course-fees")
+	public Student getStudentWithMinCourseFees() {
+		return service.getStudentWithMinCourseFees();
+	}
 
 }
